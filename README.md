@@ -27,7 +27,7 @@ const trendyol = new Trendyol("shopId","apiKey","apiSecret")
 
 ## API Reference
 
-List All Products;
+# List All Products;
 
 Returns a list of all products
 
@@ -45,7 +45,7 @@ let products= await trendyol.getAllProducts(options);
 | page                    | Page parameter starts from 0                                                                      |
 | size                    | Determine how many products will return from request. Max value 200                               |
 
-List One Product By Barcode;
+# List One Product By Barcode;
 
 Returns a product 
 
@@ -63,14 +63,15 @@ let product= await trendyol.getProductDetailByBarcode(options);
 
 
 
-List All Orders;
+# List All Orders;
 
 Returns a list of all orders
 
 ```bash
 let options={
   page:0,
-  size:50
+  size:50,
+  status:"Created" //optional 
 };
 
 let orders= await trendyol.getOrders(options);
@@ -83,7 +84,7 @@ let orders= await trendyol.getOrders(options);
 
 
 
-List One Order By Order Number;
+# List One Order By Order Number;
 
 Returns an order 
 
