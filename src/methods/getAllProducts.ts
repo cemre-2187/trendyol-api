@@ -4,7 +4,7 @@ import { Options } from "../interfaces/IOptions"
 
 export const getAllProductsMethod = async (shopId: number, apiKey: string, apiSecret: string, options: Options): Promise<ProductApiResponse> => {
 
-  if (!options.page || options.size) {
+  if (options.page == null || options.size == null) {
     throw Error("Please provide page and size properly")
   }
 

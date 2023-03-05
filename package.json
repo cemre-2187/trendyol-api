@@ -1,6 +1,6 @@
 {
-  "name": "@rexven-tech/trendyolapi",
-  "version": "1.0.0",
+  "name": "@rexven-tech/trendyol-api",
+  "version": "1.0.8",
   "description": "",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",

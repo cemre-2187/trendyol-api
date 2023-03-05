@@ -4,7 +4,7 @@ import { OrderApiResponse } from "../interfaces/IOrder"
 
 export const getOrdersMethod = async (shopId: number, apiKey: string, apiSecret: string, options: Options): Promise<OrderApiResponse> => {
 
-  if (!options.page || options.size) {
+  if (options.page == null || options.size == null) {
     throw Error("Please provide page and size properly")
   }
 

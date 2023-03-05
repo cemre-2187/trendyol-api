@@ -6,10 +6,11 @@ import { getOrderDetailByOrderIdMethod } from "./methods/getOrderDetailByOrderId
 import { Options } from "./interfaces/IOptions";
 import { OrderApiResponse } from "./interfaces/IOrder";
 
-class Trendyol {
+export class Trendyol {
   private shopId: number
   private apiKey: string
   private apiSecret: string
+
   constructor(
     shopId: number,
     apiKey: string,
@@ -38,4 +39,3 @@ class Trendyol {
 
 }
 
-export default Trendyol;

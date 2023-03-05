@@ -3,5 +3,5 @@ export interface Options {
   size?: number,
   barcode?: string,
   status?: string,
-  orderId?: number
+  orderId?: string
 }

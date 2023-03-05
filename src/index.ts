@@ -1,7 +1,5 @@
-import Trendyol from './trendyol';
 
-export { Trendyol };
-export default Trendyol;
+export { Trendyol } from './trendyol'
 
 
 // Auth Process

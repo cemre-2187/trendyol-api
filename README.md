@@ -54,7 +54,7 @@ let options={
   barcode:"product barcode"
 };
 
-let product= await trendyol.getAllProductDetailByBarcode(options);
+let product= await trendyol.getProductDetailByBarcode(options);
 ```
 
 | option                  | Description                                                                                       |
