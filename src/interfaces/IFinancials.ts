@@ -1,0 +1,23 @@
+export interface FinancialApiResponse {
+  id: string,
+  transactionDate: number,
+  barcode?: string,
+  transactionType: string,
+  receiptId?: string,
+  description: string,
+  debt: number,
+  credit: number,
+  paymentPeriod?: string,
+  commissionRate?: string,
+  commissionAmount?: string,
+  commissionInvoiceSerialNumber?: string,
+  sellerRevenue?: string,
+  orderNumber?: string,
+  paymentOrderId: number,
+  paymentDate?: string,
+  sellerId: number,
+  storeId?: string,
+  storeName?: string,
+  storeAddress?: string,
+}
+

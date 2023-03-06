@@ -1,10 +1,13 @@
 import { ProductApiResponse } from "./interfaces/IProduct";
+import { Options } from "./interfaces/IOptions";
+import { OrderApiResponse } from "./interfaces/IOrder";
+import { FinancialApiResponse } from "./interfaces/IFinancials";
+
 import { getAllProductsMethod } from "./methods/getAllProducts";
 import { getProductDetailByBarcodeMethod } from "./methods/getProductDetailByBarcode";
 import { getOrdersMethod } from "./methods/getOrders";
 import { getOrderDetailByOrderIdMethod } from "./methods/getOrderDetailByOrderId";
-import { Options } from "./interfaces/IOptions";
-import { OrderApiResponse } from "./interfaces/IOrder";
+import { getOtherFinancialsMethod } from "./methods/getOtherFinancials";
 
 export class Trendyol {
   private shopId: number
@@ -37,5 +40,8 @@ export class Trendyol {
     return getOrderDetailByOrderIdMethod(this.shopId, this.apiKey, this.apiSecret, options)
   }
 
+  public getOtherFinancials(options: Options): Promise<FinancialApiResponse[]> {
+    return getOtherFinancialsMethod(this.shopId, this.apiKey, this.apiSecret, options)
+  }
 }
 

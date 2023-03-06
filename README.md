@@ -1,14 +1,16 @@
-## Trendyol Api
+# Trendyol Api
 
 A Node.js library for accessing the Trendyol API, which allows you to list products, orders, and more.
 
-## Installation
+# Installation
 ```bash
 npm install @rexven-tech/trendyolapi
 ```
 
-## Usage
+# Usage
 Create class with shop credentials.
+
+
 
 ```bash
 const Trendyol = require('@rexven-tech/trendyolapi');
@@ -25,9 +27,9 @@ const trendyol = new Trendyol("shopId","apiKey","apiSecret")
 ```
 
 
-## API Reference
+# API Reference
 
-# List All Products;
+## List All Products;
 
 Returns a list of all products
 
@@ -45,7 +47,7 @@ let products= await trendyol.getAllProducts(options);
 | page                    | Page parameter starts from 0                                                                      |
 | size                    | Determine how many products will return from request. Max value 200                               |
 
-# List One Product By Barcode;
+## List One Product By Barcode;
 
 Returns a product 
 
@@ -59,11 +61,11 @@ let product= await trendyol.getProductDetailByBarcode(options);
 
 | option                  | Description                                                                                       |
 | ----------------------- | ------------------------------------------------------------------------------------------------- |
-| barcode                 | Product Barcode                                                                                  |
+| barcode                 | Product Barcode                                                                                   |
 
 
 
-# List All Orders;
+## List All Orders;
 
 Returns a list of all orders
 
@@ -84,7 +86,7 @@ let orders= await trendyol.getOrders(options);
 
 
 
-# List One Order By Order Number;
+## List One Order By Order Number;
 
 Returns an order 
 
@@ -100,6 +102,6 @@ let order= await trendyol.getOrderDetailByOrderId(options);
 | ----------------------- | ------------------------------------------------------------------------------------------------- |
 | orderId                 | Order Number                                                                                      |
 
-## More is coming
+# More is coming
 
 Contributions are welcome! 
