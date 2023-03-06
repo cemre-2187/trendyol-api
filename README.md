@@ -10,7 +10,7 @@ npm install @rexven-tech/trendyolapi
 # Usage
 Create class with shop credentials.
 
-![alt text](https://github.com/cemre-2187/trendyol-api/blob/main/Ekran%20Resmi%202023-03-06%2009.34.17.png?raw=true)
+
 
 ```bash
 const Trendyol = require('@rexven-tech/trendyolapi');
@@ -21,6 +21,9 @@ or
 ```bash
 import {Trendyol} from '@rexven-tech/trendyolapi'
 ```
+
+Get credentials from account page.
+![alt text](https://github.com/cemre-2187/trendyol-api/blob/main/Ekran%20Resmi%202023-03-06%2009.34.17.png?raw=true)
 
 ```bash
 const trendyol = new Trendyol("shopId","apiKey","apiSecret")
