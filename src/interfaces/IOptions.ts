@@ -4,5 +4,6 @@ export interface Options {
   barcode?: string,
   status?: string,
   orderId?: string,
-  day?: number
+  day?: number,
+  transactionType?: string,
 }

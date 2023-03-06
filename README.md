@@ -10,7 +10,7 @@ npm install @rexven-tech/trendyolapi
 # Usage
 Create class with shop credentials.
 
-
+![alt text](https://github.com/cemre-2187/trendyol-api/blob/main/Ekran%20Resmi%202023-03-06%2009.34.17.png?raw=true)
 
 ```bash
 const Trendyol = require('@rexven-tech/trendyolapi');
@@ -100,7 +100,25 @@ let order= await trendyol.getOrderDetailByOrderId(options);
 
 | option                  | Description                                                                                       |
 | ----------------------- | ------------------------------------------------------------------------------------------------- |
-| orderId                 | Order Number                                                                                      |
+| orderId                 | Order Number    
+
+## Get Other Financials;
+
+Returns an order 
+
+```bash
+let options={
+  day:17,
+  transactionType:"DeductionInvoices"
+};
+
+let order= await trendyol.getOtherFinancials(options);
+```
+
+| option          | Description                                                                                                            |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| day             | How many days before now for data date range                                                                           |
+| transactionType | CashAdvance, WireTransfer, IncomingTransfer, ReturnInvoice, CommissionAgreementInvoice, PaymentOrder,DeductionInvoices |   
 
 # More is coming
 

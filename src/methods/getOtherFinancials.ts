@@ -4,7 +4,7 @@ import { Options } from "../interfaces/IOptions"
 
 export const getOtherFinancialsMethod = async (shopId: number, apiKey: string, apiSecret: string, options: Options): Promise<FinancialApiResponse[]> => {
 
-  if (!options.day) {
+  if (options.day == null || options.transactionType) {
     throw Error("Please provide day parameter properly")
   }
   // Create Basic Auth Token
@@ -30,7 +30,7 @@ export const getOtherFinancialsMethod = async (shopId: number, apiKey: string, a
       method: 'get',
       maxBodyLength: Infinity,
       url: 'https://api.trendyol.com/integration/finance/che/sellers/' + shopId + '/otherfinancials?endDate=' +
-        current + '&startDate=' + start + '&transactionType=DeductionInvoices&page=0&size=1000',
+        current + '&startDate=' + start + '&transactionType=' + options.transactionType + '&page=0&size=1000',
       headers: {
         'Authorization': 'Basic ' + token,
       },
@@ -49,7 +49,7 @@ export const getOtherFinancialsMethod = async (shopId: number, apiKey: string, a
     method: 'get',
     maxBodyLength: Infinity,
     url: 'https://api.trendyol.com/integration/finance/che/sellers/' + shopId + '/otherfinancials?endDate=' +
-      currentMod + '&startDate=' + startMod + '&transactionType=DeductionInvoices&page=0&size=1000',
+      currentMod + '&startDate=' + startMod + '&transactionType=' + options.transactionType + '&page=0&size=1000',
     headers: {
       'Authorization': 'Basic ' + token,
     },
