@@ -4,7 +4,7 @@ import { Options } from "../interfaces/IOptions"
 
 export const getOtherFinancialsMethod = async (shopId: number, apiKey: string, apiSecret: string, options: Options): Promise<FinancialApiResponse[]> => {
 
-  if (options.day == null || options.transactionType) {
+  if (options.day == null || options.transactionType == null) {
     throw Error("Please provide day parameter properly")
   }
   // Create Basic Auth Token
