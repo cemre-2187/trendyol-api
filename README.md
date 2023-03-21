@@ -13,13 +13,13 @@ Create class with shop credentials.
 
 
 ```bash
-const Trendyol = require('@rexven-tech/trendyolapi');
+const {Trendyol} = require('@rexven-tech/trendyol-api');
 ```
 
 or
 
 ```bash
-import {Trendyol} from '@rexven-tech/trendyolapi'
+import {Trendyol} from '@rexven-tech/trendyol-api'
 ```
 
 Get credentials from account page.
