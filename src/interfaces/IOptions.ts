@@ -6,4 +6,6 @@ export interface Options {
   orderId?: string,
   day?: number,
   transactionType?: string,
+  startDate?: any
+  dateType?: string
 }

@@ -40,7 +40,9 @@ Returns a list of all products
 ```bash
 let options={
   page:0,
-  size:50
+  size:50,
+  startDate:1679321575388, // optional
+  dateType:LAST_MODIFIED_DATE //optional
 };
 
 let products= await trendyol.getAllProducts(options);
@@ -50,6 +52,8 @@ let products= await trendyol.getAllProducts(options);
 | ----------------------- | ------------------------------------------------------------------------------------------------- |
 | page                    | Page parameter starts from 0                                                                      |
 | size                    | Determine how many products will return from request. Max value 200                               |
+| startDate               | Use Timestamp fromat                                                                              |
+| dateType                | Determine date filter option. CREATED_DATE or LAST_MODIFIED_DATE can be send for dateType         |
 
 ## List One Product By Barcode;
 
