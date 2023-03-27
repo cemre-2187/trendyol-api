@@ -7,7 +7,7 @@ export interface ProductApiResponse {
   content: Product[]
 }
 
-interface Product {
+export interface Product {
   approved: boolean,
   archived: boolean,
   attributes: Attribute[],
@@ -19,7 +19,7 @@ interface Product {
   createDateTime: number,
   description: string,
   dimensionalWeight: number,
-  gender: number,
+  gender: string,
   hasActiveCampaign: boolean,
   id: string,
   lastPriceChangeDate: number,

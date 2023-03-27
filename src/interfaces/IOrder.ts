@@ -6,7 +6,7 @@ export interface OrderApiResponse {
   content: Order[]
 }
 
-interface Order {
+export interface Order {
   shipmentAddress: ShipmentAddress,
   orderNumber: string,
   grossAmount: number,
