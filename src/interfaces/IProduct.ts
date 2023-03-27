@@ -21,7 +21,7 @@ export interface Product {
   dimensionalWeight: number,
   gender: string,
   hasActiveCampaign: boolean,
-  id?: string,
+  id: string,
   lastPriceChangeDate: number,
   lastStockChangeDate: number,
   lastUpdateDate: number,
