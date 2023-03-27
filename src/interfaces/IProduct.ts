@@ -21,7 +21,7 @@ export interface Product {
   dimensionalWeight: number,
   gender: string,
   hasActiveCampaign: boolean,
-  id: string,
+  id?: string,
   lastPriceChangeDate: number,
   lastStockChangeDate: number,
   lastUpdateDate: number,
@@ -46,8 +46,6 @@ export interface Product {
   rejectReasonDetails: any,
   blacklisted: boolean,
   images: Image[],
-  trId?: string,
-  userId?: number
 }
 interface Attribute {
   attributeId: number,
