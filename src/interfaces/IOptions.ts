@@ -8,4 +8,5 @@ export interface Options {
   transactionType?: string,
   startDate?: any
   dateType?: string
+  onSale?: boolean
 }
