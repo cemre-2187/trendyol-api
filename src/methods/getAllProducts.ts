@@ -14,8 +14,8 @@ export const getAllProductsMethod = async (shopId: number, apiKey: string, apiSe
     method: 'get',
     maxBodyLength: Infinity,
     url: 'https://api.trendyol.com/sapigw/suppliers/' + shopId
-      + '/products?page=' + options.page + '&size=' + options.size + '&approved=True&dateQueryType=' + (options.dateType ? options.dateType : "")
-      + '&startDate=' + (options.startDate ? options.startDate : "") + 'onSale=' + (options.onSale ? options.onSale : ""),
+      + '/products?page=' + options.page + '&size=' + options.size + '&approved=True' + (options.dateType ? `&dateQueryType=${options.dateType}` : "")
+      + (options.startDate ? `&startDate=${options.startDate}` : '') + (options.onSale ? `&onSale=${options.onSale}` : ''),
     headers: {
       'Authorization': 'Basic ' + token,
     },
