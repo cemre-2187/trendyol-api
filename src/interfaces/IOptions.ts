@@ -9,4 +9,5 @@ export interface Options {
   startDate?: any
   dateType?: string
   onSale?: boolean
+  orderByField?: string
 }

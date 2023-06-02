@@ -4,8 +4,11 @@ import { OrderApiResponse } from "../interfaces/IOrder"
 
 export const getOrdersMethod = async (shopId: number, apiKey: string, apiSecret: string, options: Options): Promise<OrderApiResponse> => {
 
-  if (options.page == null || options.size == null) {
-    throw Error("Please provide page and size properly")
+  if (options.page == null) {
+    throw Error("Please provide the page properly")
+  }
+  if (options.size == null) {
+    throw Error("Please provide the size properly")
   }
 
   const token: string = Buffer.from(`${apiKey}:${apiSecret}`, 'utf8').toString('base64')
@@ -14,7 +17,7 @@ export const getOrdersMethod = async (shopId: number, apiKey: string, apiSecret:
     method: 'get',
     maxBodyLength: Infinity,
     url: 'https://api.trendyol.com/sapigw/suppliers/' + shopId + '/orders?page=' +
-      options.page + '&size=' + options.size + '&orderByDirection=DESC&status=' + (options.status ? options.status : ""),
+      options.page + '&size=' + options.size + '&orderByDirection=DESC&status=' + (options.status ? options.status : "") + '&orderbByField=' + (options.orderByField ? options.orderByField : 'CreatedDate') + (options.startDate ? `&startDate=${options.startDate}` : ''),
     headers: {
       'Authorization': 'Basic ' + token,
     },
