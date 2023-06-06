@@ -52,7 +52,7 @@ export interface Order {
   groupDeal: boolean,
 }
 
-interface ShipmentAddress {
+export interface ShipmentAddress {
   id: number,
   firstName: string,
   lastName: string,
@@ -72,7 +72,7 @@ interface ShipmentAddress {
   fullName: string,
 }
 
-interface InvoiceAddress {
+export interface InvoiceAddress {
   id: number,
   firstName: string,
   lastName: string,
@@ -92,7 +92,7 @@ interface InvoiceAddress {
   fullName: string,
 }
 
-interface Line {
+export interface Line {
   quantity: number,
   salesCampaignId: number,
   productSize: string,
@@ -113,12 +113,12 @@ interface Line {
   price: number,
   fastDeliveryOptions?: any
 }
-interface DiscountDetails {
+export interface DiscountDetails {
   lineItemPrice: number,
   lineItemDiscount: number,
   lineItemTyDiscount: number,
 }
-interface PackageHistories {
+export interface PackageHistories {
   createdDate: number,
   status: string
 }
