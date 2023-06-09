@@ -4,9 +4,13 @@ import { Options } from "../interfaces/IOptions"
 
 export const getOtherFinancialsMethod = async (shopId: number, apiKey: string, apiSecret: string, options: Options): Promise<FinancialApiResponse[]> => {
 
-  if (options.day == null || options.transactionType == null) {
+  if (options.day == null) {
     throw Error("Please provide day parameter properly")
   }
+  if (options.transactionType == null) {
+    throw Error("Please provide transactionType parameter properly")
+  }
+
   // Create Basic Auth Token
   const token: string = Buffer.from(`${apiKey}:${apiSecret}`, 'utf8').toString('base64')
 
@@ -17,6 +21,7 @@ export const getOtherFinancialsMethod = async (shopId: number, apiKey: string, a
   // Determine request count because of the 15 days limit
   let cycle: number = Math.floor(options.day / 15)
   let mod: number = options.day % 15
+  if (mod === 0) mod = 1
   // We are defining start value here because we have to track this 
   // value for last request which is using leftover days 
   let start: number = Date.now();

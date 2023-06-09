@@ -8,6 +8,8 @@ import { getProductDetailByBarcodeMethod } from "./methods/getProductDetailByBar
 import { getOrdersMethod } from "./methods/getOrders";
 import { getOrderDetailByOrderIdMethod } from "./methods/getOrderDetailByOrderId";
 import { getOtherFinancialsMethod } from "./methods/getOtherFinancials";
+import { getSettlements } from "./methods/getSettlements";
+import { SettlementApiResponse } from ".";
 
 export class Trendyol {
   private shopId: number
@@ -42,6 +44,10 @@ export class Trendyol {
 
   public getOtherFinancials(options: Options): Promise<FinancialApiResponse[]> {
     return getOtherFinancialsMethod(this.shopId, this.apiKey, this.apiSecret, options)
+  }
+
+  public getSettlements(options: Options): Promise<SettlementApiResponse> {
+    return getSettlements(this.shopId, this.apiKey, this.apiSecret, options)
   }
 }
 
