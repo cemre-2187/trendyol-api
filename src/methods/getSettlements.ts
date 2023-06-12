@@ -1,8 +1,8 @@
 import axios from "axios"
 import { Options } from "../interfaces/IOptions";
-import { SettlementApiResponse } from "../interfaces/ISettlements"
+import { Settlement, SettlementApiResponse } from "../interfaces/ISettlements"
 
-export const getSettlements = async (shopId: number, apiKey: string, apiSecret: string, options: Options): Promise<SettlementApiResponse[]> => {
+export const getSettlements = async (shopId: number, apiKey: string, apiSecret: string, options: Options): Promise<Settlement[]> => {
 
     if (!options.transactionType) {
         throw Error("Please provide any transaction type")
@@ -73,7 +73,7 @@ export const getSettlements = async (shopId: number, apiKey: string, apiSecret: 
     })
 
 
-    let result: SettlementApiResponse[]
+    let result: Settlement[]
     result = responseArray
     return result
 }

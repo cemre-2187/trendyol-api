@@ -2,7 +2,7 @@ import { ProductApiResponse } from "./interfaces/IProduct";
 import { Options } from "./interfaces/IOptions";
 import { OrderApiResponse } from "./interfaces/IOrder";
 import { FinancialApiResponse } from "./interfaces/IFinancials";
-import { SettlementApiResponse } from "./interfaces/ISettlements";
+import { Settlement, SettlementApiResponse } from "./interfaces/ISettlements";
 
 import { getAllProductsMethod } from "./methods/getAllProducts";
 import { getProductDetailByBarcodeMethod } from "./methods/getProductDetailByBarcode";
@@ -46,7 +46,7 @@ export class Trendyol {
     return getOtherFinancialsMethod(this.shopId, this.apiKey, this.apiSecret, options)
   }
 
-  public getSettlements(options: Options): Promise<SettlementApiResponse[]> {
+  public getSettlements(options: Options): Promise<Settlement[]> {
     return getSettlements(this.shopId, this.apiKey, this.apiSecret, options)
   }
 }
