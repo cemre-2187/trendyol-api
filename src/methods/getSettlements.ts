@@ -27,8 +27,8 @@ export const getSettlements = async (shopId: number, apiKey: string, apiSecret: 
         cycle = Math.floor(options.day / 15)
         mod = options.day % 15
     } else {
-        cycle = Math.floor(options.startDate / 1296000000)
-        mod = options.startDate % 1296000000
+        cycle = Math.floor((Date.now() - options.startDate) / 1296000000)
+        mod = (Date.now() - options.startDate) % 1296000000
     }
     if (mod === 0) mod = 1
     // We are defining start value here because we have to track this 
