@@ -7,9 +7,13 @@ export const getSettlements = async (shopId: number, apiKey: string, apiSecret: 
     if (!options.transactionType) {
         throw Error("Please provide any transaction type")
     }
-    if (!options.day) {
-        throw Error("Please provide day parameter properly")
+    if (!options.day && !options.startDate) {
+        throw Error("Please provide either day or startDate parameters properly")
     }
+    if (options.day && options.startDate) {
+        throw Error("Please provide only either day or startDate parameters properly")
+    }
+
 
     const token: string = Buffer.from(`${apiKey}:${apiSecret}`, 'utf8').toString('base64')
     // There is a 15 day limit in this endpoint so we have to do partition for long term data
@@ -17,8 +21,15 @@ export const getSettlements = async (shopId: number, apiKey: string, apiSecret: 
     let requestPool: any = []
 
     // Determine request count because of the 15 days limit
-    let cycle: number = Math.floor(options.day / 15)
-    let mod: number = options.day % 15
+    let cycle: number;
+    let mod: number;
+    if (options.day) {
+        cycle = Math.floor(options.day / 15)
+        mod = options.day % 15
+    } else {
+        cycle = Math.floor(options.startDate / 1296000000)
+        mod = options.startDate % 1296000000
+    }
     if (mod === 0) mod = 1
     // We are defining start value here because we have to track this 
     // value for last request which is using leftover days 
@@ -45,7 +56,7 @@ export const getSettlements = async (shopId: number, apiKey: string, apiSecret: 
     // Last start day of the cycles will be end date. Because We alread take data from that time.
     // Start mod will be leftover days ago
     let currentMod = start;
-    let startMod = currentMod - (mod * 86400000)
+    let startMod = options.day ? currentMod - (mod * 86400000) : currentMod - mod
 
     //Leftover days request config
     let config: any = {
@@ -76,4 +87,6 @@ export const getSettlements = async (shopId: number, apiKey: string, apiSecret: 
     let result: Settlement[]
     result = responseArray
     return result
+
+
 }
