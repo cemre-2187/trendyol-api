@@ -17,7 +17,7 @@ export const getOrdersMethod = async (shopId: number, apiKey: string, apiSecret:
     method: 'get',
     maxBodyLength: Infinity,
     url: 'https://api.trendyol.com/sapigw/suppliers/' + shopId + '/orders?page=' +
-      options.page + '&size=' + options.size + '&orderByDirection=DESC&status=' + (options.status ? options.status : "") + '&orderbByField=' + (options.orderByField ? options.orderByField : 'CreatedDate') + (options.startDate ? `&startDate=${options.startDate}` : ''),
+      options.page + '&size=' + options.size + '&orderByDirection=DESC&status=' + (options.status ? options.status : "") + '&orderbByField=' + (options.orderByField ? options.orderByField : 'CreatedDate') + (options.startDate ? `&startDate=${options.startDate}` : '') + (options.endDate ? `&endDate=${options.endDate}` : ''),
     headers: {
       'Authorization': 'Basic ' + token,
     },
