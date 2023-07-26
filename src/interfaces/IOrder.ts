@@ -117,6 +117,7 @@ export interface Line {
   trOrderId: number;
   trProductId: number;
   producerId: number
+  totalVat?: number
 }
 export interface DiscountDetails {
   lineItemPrice: number;
