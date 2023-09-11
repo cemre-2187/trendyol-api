@@ -11,4 +11,5 @@ export interface Options {
   onSale?: boolean
   orderByField?: string
   endDate?: any
+  invoiceId?: string
 }
