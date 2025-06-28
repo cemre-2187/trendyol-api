@@ -24,14 +24,14 @@ export interface Order {
   cargoProviderName: string;
   lines: Line[];
   orderDate: number;
-  tcIdentityNumber: string;
+  identityNumber: string;
   currencyCode: string;
   packageHistories: PackageHistories[];
   shipmentPackageStatus: string;
   status: string;
   deliveryType: string;
   timeSlotId: number;
-  scheduledDeliveryStoreId: string;
+  scheduledDeliveryStoreId?: string;
   estimatedDeliveryStartDate: number;
   estimatedDeliveryEndDate: number;
   totalPrice: number;
@@ -49,6 +49,14 @@ export interface Order {
   agreedDeliveryExtensionStartDate: number;
   warehouseId: number;
   groupDeal: boolean;
+  micro: boolean;
+  giftBoxRequested: boolean;
+  "3pByTrendyol": boolean;
+  containsDangerousProduct: boolean;
+  cargoDeci: number;
+  isCod: boolean;
+  createdBy: string;
+  originPackageIds: any;
 }
 export interface ShipmentAddress {
   id: number;
@@ -61,6 +69,14 @@ export interface ShipmentAddress {
   cityCode: number;
   district: string;
   districtId: number;
+  countyId: number;
+  countyName: string;
+  shortAddress: string;
+  stateName: string;
+  addressLines: {
+    addressLine1: string;
+    addressLine2: string;
+  };
   postalCode: string;
   countryCode: string;
   neighborhoodId: number;
@@ -80,6 +96,14 @@ export interface InvoiceAddress {
   cityCode: number;
   district: string;
   districtId: number;
+  countyId: number;
+  countyName: string;
+  shortAddress: string;
+  stateName: string;
+  addressLines: {
+    addressLine1: string;
+    addressLine2: string;
+  };
   postalCode: string;
   countryCode: string;
   neighborhoodId: number;
@@ -92,9 +116,10 @@ export interface Line {
   quantity: number;
   salesCampaignId: number;
   productSize: string;
-  merchantSku: string;
+  merchantSku?: string;
   productName: string;
   productCode: number;
+  productOrigin: string;
   merchantId: number;
   amount: number;
   discount: number;
@@ -109,15 +134,16 @@ export interface Line {
   orderLineItemStatusName: string;
   price: number;
   fastDeliveryOptions?: any;
-  productCost: number;
-  adCost: number;
-  shippingCost: number;
-  status: string;
-  trCut: number;
-  trOrderId: number;
-  trProductId: number;
-  producerId: number
-  totalVat?: number
+  productCategoryId: number;
+  productCost?: number;
+  adCost?: number;
+  shippingCost?: number;
+  status?: string;
+  trCut?: number;
+  trOrderId?: number;
+  trProductId?: number;
+  producerId?: number;
+  totalVat?: number;
 }
 export interface DiscountDetails {
   lineItemPrice: number;
