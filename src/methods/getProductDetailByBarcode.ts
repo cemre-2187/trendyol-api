@@ -30,7 +30,7 @@ export const getProductDetailByBarcodeMethod = async (
     maxRedirects: 0,
     "Content-Type": "application/json",
     "Accept-Encoding": "gzip, deflate, br",
-    "User-Agent": "Trendyol-API-Client",
+    "User-Agent": `${shopId} - SelfIntegration`,
   };
 
   let response = await axios(config);
