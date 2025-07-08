@@ -20,7 +20,7 @@ export const getProductDetailByBarcodeMethod = async (
     method: "get",
     maxBodyLength: Infinity,
     url:
-      "https://api.trendyol.com/sapigw/suppliers/" +
+      "https://apigw.trendyol.com/integration/product/sellers/" +
       shopId +
       "/products?page=0&size=50&approved=True&barcode=" +
       options.barcode,
